@@ -1,0 +1,22 @@
+public class Palindrome1 {
+
+    
+    public static void main(String[] args) {
+	String[] cadenas = { "orejero", "ojo", "Guatemala", "rosa", "Sol", "Ana", "radar", "erre",
+                        "oso",
+                        "Rayar",
+                        "araña", "luna" };
+	for (String cadena : cadenas) {
+		System.out.println("¿'" + cadena + "' es palíndromo? " + esPalindromo(cadena));
+		}
+	}
+
+	
+    public static boolean esPalindromo(String cadena) {
+            cadena = cadena.toLowerCase().replace("á", "a").replace("é", "e").replace("í", "i").replace("ó", "o")
+                            .replace("ú", "u").replace(" ", "").replace(".", "").replace(",", "");
+		
+            String invertida = new StringBuilder(cadena).reverse().toString();
+            return invertida.equals(cadena);
+	}
+}
